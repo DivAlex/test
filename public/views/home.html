@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{headingTitle}}
+        </div>
+        <div class="panel-body">
+            <div class="row show-list">
+                <div ng-repeat="user in users">
+                    <div  class="col-xs-4 col-md-2">
+                        {{user.username}}
+                    </div>
+                    <div  class="col-xs-4 col-md-2">
+                        {{user.email}}
+                    </div>
+                    <div  class="col-xs-4 col-md-2">
+                        {{user.firstName}}
+                    </div>
+                    <div  class="col-xs-4 col-md-2">
+                        {{user.lastName}}
+                    </div>
+                    <div  class="col-xs-4 col-md-2">
+                        <a href="/edit/{{user._id}}" class="btn btn-block btn-info">
+                            <span class="ion-minus"></span> Edit
+                        </a>
+                    </div>
+                    <div  class="col-xs-4 col-md-2">
+                        <button ng-click="delete()" class="btn btn-block btn-danger">
+                            <span class="ion-minus"></span> Delete
+                        </button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

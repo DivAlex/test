@@ -1,0 +1,86 @@
+<div class="container">
+    <br/>
+
+    <div class="row">
+        <div class="center-form panel">
+            <form method="post" ng-submit="signup()" name="signupForm">
+                <div class="panel-body">
+                    <h2 class="text-center">Sign up</h2>
+
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : signupForm.username.$valid && signupForm.username.$dirty, 'has-error' : signupForm.username.$invalid && signupForm.username.$dirty }">
+                        <input class="form-control input-lg" type="text" id="username" name="username" ng-model="username" placeholder="Username" required autofocus>
+
+                        <div class="help-block text-danger" ng-if="signupForm.username.$dirty"
+                             ng-messages="signupForm.username.$error">
+                            <div ng-message="required">Username is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : signupForm.password.$valid && signupForm.password.$dirty, 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
+                        <input class="form-control input-lg" type="password" name="password"
+                               ng-model="password" placeholder="Password" required>
+
+                        <div class="help-block text-danger"
+                             ng-if="signupForm.password.$dirty"
+                             ng-messages="signupForm.password.$error">
+                            <div ng-message="required">Password is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : signupForm.confirmPassword.$valid && signupForm.confirmPassword.$dirty, 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
+                        <input class="form-control input-lg" type="password"
+                               name="confirmPassword" ng-model="confirmPassword"
+                               repeat-password="password" placeholder="Confirm Password"
+                               required>
+
+                        <div class="help-block text-danger my-special-animation"
+                             ng-if="signupForm.confirmPassword.$dirty"
+                             ng-messages="signupForm.confirmPassword.$error">
+                            <div ng-message="required">You must confirm password.</div>
+                            <div ng-message="repeat">Passwords do not match.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : signupForm.email.$valid && signupForm.email.$dirty, 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+                        <input class="form-control input-lg" type="email" id="email" name="email" ng-model="email" placeholder="Email" required autofocus>
+
+                        <div class="help-block text-danger" ng-if="signupForm.email.$dirty"
+                             ng-messages="signupForm.email.$error">
+                            <div ng-message="required">Your email address is required.</div>
+                            <div ng-message="email">Your email address is invalid.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : signupForm.firstName.$valid && signupForm.firstName.$dirty, 'has-error' : signupForm.firstName.$invalid && signupForm.firstName.$dirty }">
+                        <input class="form-control input-lg" type="text" id="firstName" name="firstName" ng-model="firstName" placeholder="First Name" required autofocus>
+
+                        <div class="help-block text-danger" ng-if="signupForm.firstName.$dirty"
+                             ng-messages="signupForm.firstName.$error">
+                            <div ng-message="required">First Name address is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : signupForm.lastName.$valid && signupForm.lastName.$dirty, 'has-error' : signupForm.lastName.$invalid && signupForm.lastName.$dirty }">
+                        <input class="form-control input-lg" type="text" id="lastName" name="lastName" ng-model="lastName" placeholder="Last Name" required autofocus>
+
+                        <div class="help-block text-danger" ng-if="signupForm.lastName.$dirty"
+                             ng-messages="signupForm.lastName.$error">
+                            <div ng-message="required">Last Name address is required.</div>
+                        </div>
+                    </div>
+
+
+                    <button type="submit" ng-disabled="signupForm.$invalid"
+                            class="btn btn-lg btn-block btn-primary">Create Account
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
